@@ -1,0 +1,22 @@
+{
+  "name": "Notebook",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "postCreateCommand": "cd my-react-app && npm install",
+  "secrets": {
+    "HACKATIME_API_KEY": {
+      "description": "Your Hackatime API key, so the coding-time extension can report from this Codespace.",
+      "documentationUrl": "https://hackatime.hackclub.com/docs/getting-started/quick-start"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["hackatime.hackatime-time-tracker"],
+      "settings": {
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "git.autofetch": "all",
+        "git.autofetchPeriod": 300
+      }
+    }
+  }
+}

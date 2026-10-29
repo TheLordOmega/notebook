@@ -1,0 +1,6 @@
+notebook plan:
+
+first few hours following FreeCodeCamps react, until the Photography part that teaches the ui
+
+iguuigugiugigggguigiugigiugigiugiguiiguiguiguigigiiguiiuiiiiugiuggugyvyvjvjhviugiug
+hdhddhtthdtdhdthdthdthdthdthdthdthdthdthdhtdhtdthhtdyfyyiffyj jyuyfituygggggg
