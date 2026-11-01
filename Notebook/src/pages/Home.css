@@ -1,0 +1,84 @@
+.mood-board{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.mood-board-header h1{
+    margin: 0 0 4px;
+    font-size: 40px;
+    color: var(--color-text);
+}
+
+.mood-board-header p {
+    margin: 0 0 28px;
+    color: var(--color-muted);
+}
+.mood-board-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+.note-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    min-height: 210px;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 18px rgba(44, 38, 32, 0.08);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform;
+}
+.note-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 26px rgba(44, 38, 32, 0.14);
+}
+
+.note-card-image{
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.note-card-title{
+    margin: 0;
+    font-size: 22px;
+    color:var(--color-text);
+}
+
+.note-card-description{
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.45;
+    color:var(--color-text);
+}
+
+
+.note-preview {
+    height: 120px;
+    overflow: hidden;
+    text-align: left;
+    -webkit-mask-image: linear-gradient(black 70%, transparent);
+    mask-image: linear-gradient(black 70%, transparent);
+}
+.note-preview-empty {
+    height: 120px;
+    display: grid;
+    place-items: center;
+    color: var(--color-muted); }
+.pv, .pv-done {
+    margin: 0 0 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-text); }
+.pv-done {
+    text-decoration: line-through;
+    opacity: 0.55; }

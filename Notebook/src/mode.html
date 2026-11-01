@@ -1,0 +1,17 @@
+<script>
+  (function () {
+    try {
+      var storedTheme = localStorage.getItem('theme');
+
+      if (storedTheme === 'light' || storedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+      }
+    } catch (_) {}
+  })();
+</script>
+
+
+
+<button id="theme-toggle" type="button">
+    Toggle theme
+</button>

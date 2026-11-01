@@ -1,0 +1,74 @@
+
+
+.app{
+    min-height: 100svh;
+    padding: 72px 32px 56px;
+    box-sizing: border-box;
+    background-color: var(--color-paper);
+    background-image: radial-gradient(var(--color-dots) 2px, transparent 1px);
+    color: var(--color-text);
+    text-align: left;
+}
+
+.app-content{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.app a{
+    color: inherit;
+}
+
+.page h1{
+    margin: 0 0 8px;
+    font-size:40px ;
+    color: var(--color-text);
+}
+
+.page p{
+    margin: 0;
+    color: var(--color-muted);
+}
+
+
+.note-page{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.back-link{
+    align-self: flex-start;
+    font-size: 15px;
+    padding: 6px 0;
+    text-decoration: none;
+    color: var(--color-muted);
+}
+
+.back-link:hover{
+    color: var(--color-text)
+}
+
+.note-title-input{
+    font: inherit;
+    font-size: 32px;
+    font-weight: 600;
+    color:  var(--color-text);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid  var(--color-border);
+    padding: 8px 0;
+    outline: none;
+}
+
+.note-title-input:focus{
+    border-bottom-color: var(--color-muted);
+}
+button.back-link {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px; }
