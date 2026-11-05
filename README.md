@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A notes website made using React
 
 the beggining of a notebook app
@@ -85,3 +86,21 @@ this project was made using react and vite as basis and is not finished, but is 
 
   
   
+=======
+A notes website made using React
+
+the beggining of a notebook app
+currently typing only works, 
+konva and handwriting is going to be added next week
+
+features currently:
+
+-a primitive save state for the title
+-favorites
+-a home screen
+-preview of the note, can be an image too
+- a slash menu like notion
+- dark and light mode
+- a sidebar
+- new note is currently buggy after adding the slash menu but previous version used to work.
+>>>>>>> 64317cd (started implementing Konva)

@@ -86,11 +86,6 @@ description:
  A React notebook website,
  Picture is of the homescreen
 
-
-
-
-
-
  features implemented:
 In the save folder:
  AddTask.js, save.jsx, TaskList.js, TasksContext.js
