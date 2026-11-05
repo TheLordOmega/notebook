@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 A notes website made using React
 
 the beggining of a notebook app
@@ -86,7 +85,6 @@ this project was made using react and vite as basis and is not finished, but is 
 
   
   
-=======
 A notes website made using React
 
 the beggining of a notebook app
