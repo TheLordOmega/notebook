@@ -163,17 +163,11 @@ this project was made using react and vite as basis and is not finished, but is 
  i used AI (claude 5.5 medium) to check everything and made some significant changes after review to BlockEditor.jsx and its connections in all the slash files, this part was the first part that felt truly out of my reach but i tried understanding it a minimum.
  
 
+WEEK2: 
+
+In the past hours i have made using the konva guides multiples seperate scripts: one for the overlay, one for shapes and resizing said shapes, one for drawing with a pen and one for dragging, there has been also one with performance improvememnts that i will implement at the end,
+
+I have also improved the README.md so it is clearer and how to run instructions.
 
 
-
-
-
-
-popup folder: 
-
-
-
-
- 
-
- features to be added:
+the goal for the next few hours is to finish implementing a pdfexport of the canvas, add multiple colors, and overall make all the scripts more cohesive, and make sure the notes app itself is ready for konva to be implemented in it.
