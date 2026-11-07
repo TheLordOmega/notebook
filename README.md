@@ -4,7 +4,7 @@ the beggining of a notebook app
 currently typing only works, 
 konva and handwriting is going to be added next week
 
-## **features
+## features
 (Week1)
 
 -a primitive save state for the title
@@ -18,8 +18,8 @@ konva and handwriting is going to be added next week
 **Week (2):**
 started implementing Konva
 
-## *How to run: 
- the website currently is running at this link:
+## How to run: 
+ the website currently is running at this link:  https://notebook-flame-nine.vercel.app/
  
  if you want to run the code, please download this repository and open it,
  then make sure the terminal is in Notebook sub-folder and run this command:
@@ -35,8 +35,8 @@ started implementing Konva
  AddTask.js, save.jsx, TaskList.js, TasksContext.js
  are made to edit and save in a session without refreshing (to be implemented with IndexDb to be saved throughout different sessions locally)
 
-this guide was followed almost 1 to 1, as this part was harder than expected (took 3h to understand)
-sources used in that part: 
+this guide was followed almost 1 to 1, as this part was harder than expected (took 2h to understand)
+sources used in that part: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 
 this save folder and storage folder (currently empty) will be made into a single file when i implement Indexdb
@@ -58,6 +58,7 @@ this save folder and storage folder (currently empty) will be made into a single
 
   these were also made along the  freecodecamp walkthrough
   source: https://www.freecodecamp.org/learn/front-end-development-libraries-v9/
+  https://w3collective.com/react-sidebar-navigation-component/
 
 ***  There is also the Sidebar css and jsx:***
   this is the current sidebar, it was mostly done following this guide with tweaks, to make it feel more modern, the goal is to make it look more modern later (similar to claude or zen browser sidebar.)
