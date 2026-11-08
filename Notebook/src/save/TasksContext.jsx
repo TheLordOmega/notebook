@@ -1,12 +1,21 @@
-import { createContext,useContext, useReducer } from "react";
+import { createContext,useContext, useReducer, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {readSave, writeSave} from "../storage/db"
 
 const TasksContext = createContext(null);
 const TasksDispatchContext = createContext(null);
+const SaveStatusContext = createContext(null);
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const key =  "notes.1"
 
+export const newInkBlock = () => ({
+  id: uid(),
+  type: "ink",
+  text: "",
+  items: [],
+  height: 560
+});
 export const newBlock = (type = "text", text = "") =>
   ({id:uid(), type, text, checked: false})
 
@@ -18,6 +27,7 @@ export function createNote(overrides = {}) {
     ...overrides,
   };
 }
+
 
 function initialTasks() {
   return [
@@ -35,17 +45,43 @@ function initialTasks() {
   ]
 }
 
-
+function loadTasks() {
+  const stickyValue = readSave(key);
+  if (stickyValue === null) {
+    return initialTasks()
+  }
+  let save;
+  try {
+    save = JSON.parse(stickyValue)
+  } catch {
+    writeSave(key + ".broken", stickyValue)
+    return initialTasks()
+  }
+  if (!Array.isArray(save)) {
+    return initialTasks()
+  }
+  return save
+    .filter( t => t && t.id && Array.isArray(t.blocks))
+    .map( t => createNote(t))
+}
 export function TasksProvider({ children }) {
   const [tasks, dispatch] = useReducer(
     tasksReducer,
     null,
-    initialTasks
+    loadTasks
   );
+  const [saveOk, setSaveOk] = useState(true)
+
+  useEffect(() => {
+    setSaveOk(writeSave(key, tasks))
+  }, [ tasks])
+
   return (
     <TasksContext value={tasks}>
       <TasksDispatchContext value={dispatch}>
-        {children}
+        <SaveStatusContext value={saveOk}>
+         {children}
+        </SaveStatusContext>
       </TasksDispatchContext>
     </TasksContext>
   );
@@ -58,6 +94,10 @@ export function useTasks() {
 
 export function useTasksDispatch() {
   return useContext(TasksDispatchContext)
+}
+
+export function useSaveStatus() {
+  return useContext(SaveStatusContext)
 }
 
 export function useCreateNote() {
@@ -74,11 +114,7 @@ export function useCreateNote() {
 function tasksReducer(tasks, action) {
   switch (action.type) {
     case 'added': {
-      return [...tasks,{
-          id: action.id,
-          text: action.text,
-          done: false,
-        }];
+      return [action.task, ...tasks]
     }
     case 'changed': {
         return tasks.map((t) => {

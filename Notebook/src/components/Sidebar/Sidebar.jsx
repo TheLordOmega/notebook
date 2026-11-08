@@ -6,7 +6,7 @@ import { useCreateNote } from "../../save/TasksContext";
 
 
 export function Sidebar() {
-  const createAndOpen = useCreateNote
+  const createAndOpen = useCreateNote()
   const [isOpen, setIsOpen] = useState(false);
   const showbar = () => setIsOpen((open) => !open);
 

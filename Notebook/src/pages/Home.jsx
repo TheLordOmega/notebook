@@ -16,7 +16,7 @@ export function MoodBoard() {
       </header>
 
       {sorted.length === 0 ? (
-        <p className='card-muted'>No notes yet. Create your first one.</p>
+        <p className='card-muted'>No notes yet.<button type="button" className='button' onClick={createAndOpen}> Create your first Note</button></p>
       ) : (
         <div className='mood-board-grid'>
           {sorted.map((note) => <NoteCard key={note.id} note={note} />)}

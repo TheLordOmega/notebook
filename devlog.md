@@ -2,12 +2,6 @@ notebook plan:
 
 first few hours following FreeCodeCamps react, until the Photography part that teaches the ui
 
-iguuigugiugigggguigiugigiugigiugiguiiguiguiguigigiiguiiuiiiiugiuggugyvyvjvjhviugiug
-hdhddhtthdtdhdthdthdthdthdthdthdthdthdthdhtdhtdthhtdyfyyiffyj jyuyfituygggggg
-
-
-
-
 first 3hours:
 
 for the first few hours i followed the Freecodecamp to build and learn the following in react:
@@ -171,3 +165,7 @@ I have also improved the README.md so it is clearer and how to run instructions.
 
 
 the goal for the next few hours is to finish implementing a pdfexport of the canvas, add multiple colors, and overall make all the scripts more cohesive, and make sure the notes app itself is ready for konva to be implemented in it.
+
+
+i worked for an hour on more konva features.
+i decided to go back and finish the savefile feature before implementing anymore of konva and fixing the new notes, but also that the notes blocks look less obstructive.
