@@ -173,3 +173,14 @@ i decided to go back and finish the savefile feature before implementing anymore
 
 i have started working on implementing konva
 updated inkblock, made the slashmenu also change colors, and made its colors be consistent with the variables, added a toolbar
+
+
+
+
+
+
+so konva has been implemented in a rudementary way but that saves with localstorage too, with multiple colors 
+
+what now is being implemented is the exporting of the note to markdown.
+
+files were moved to draft,

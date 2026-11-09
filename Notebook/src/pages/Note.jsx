@@ -46,7 +46,7 @@ export function Note() {
       <button type='button' className='back-link' onClick={() => save({ favorite: !note.favorite })}>
         {note.favorite ? '★ Favorite' : '☆ Add to favorites'}
       </button>
-      <button type='button' className='download' onClick={downloadMd(note)}>Download .md</button>
+      <button type='button' className='download' onClick={() => downloadMd(note)}>Download .md</button>
       <button type='button' className='back-link' onClick={handleDelete}>Delete note</button>
       <p className='card-muted'>{saveOk ? "Saved on this device" : "not saved: browser blocking storage"}</p>
     </div>

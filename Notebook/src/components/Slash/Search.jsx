@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const notesname = [
   "name of notes"
@@ -42,3 +43,28 @@ return (
     </div>
   )
 }
+
+
+
+
+//keep it in the url
+
+let [searchParams, setSearchParams] = useSearchParams();
+
+setSearchParams("?tab=1")
+setSearchParams({ tab: "1" })
+
+
+
+
+//ctrl k shortcut
+
+useEffect(() => {
+  function handleScroll() {
+    setPosition({x: window.scrollX,y:window.scrollY})
+  }
+  window.addEventListener("scroll", handleScroll)
+  return () => {
+    window.removeEventListener("scroll", handleScroll)
+  }
+}, [])

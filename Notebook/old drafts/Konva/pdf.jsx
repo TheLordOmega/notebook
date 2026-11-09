@@ -22,8 +22,8 @@ export const App = () => {
             const stage = stageRef.current;
             const pdf = new jsPDF({
                 orientation: "landscape",
-                unit:"px"
-                format: [width, height]
+                unit:"px",
+                format: [width, height],
                 hotfixes: ["px_scaling"]
             });
             pdf.setTextColor("#000000")
@@ -39,10 +39,10 @@ export const App = () => {
             })
 
             pdf.addImage(
-             pdfstage.toDataURL({pixelRatio:2})
+             pdfstage.toDataURL({pixelRatio:2}),
              0,
              0,
-             width
+             width,
              height
             )
         pdf.save("canvas.pdf")
@@ -64,14 +64,10 @@ export const App = () => {
                         <Rect
                         width={width}
                         height={height}
-                        fill="rgba(200,200,200)"
-
+                        fill="rgba(200,200,200)"/>
                     </Layer>
                 </Stage>
                  </div>
 
         )
     }
-
-
-}

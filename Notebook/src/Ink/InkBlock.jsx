@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Stage, Layer, Line, Rect } from "react-konva";
 import { ink_width, min_H, max_H, paper_color, colors } from "./constants";
+import { exportPng } from "./png";
 
 function useResponsiveWidth(maxWidth) {
   const containerRef = useRef(null);
@@ -26,6 +27,7 @@ export function InkBlock({ block, onChange, onRemove }) {
   const [height, setHeight] = useState(block.height ?? 560);
   const isDrawing = useRef(false);
   const resizeStart = useRef(null);
+  const stageRef = useRef(null)
   const { containerRef, width, scale } = useResponsiveWidth(ink_width);
 
   // Drawing
@@ -103,6 +105,7 @@ export function InkBlock({ block, onChange, onRemove }) {
         ))}
         <button type="button" onClick={clear}>Clear</button>
         <button type="button" onClick={onRemove}>Remove</button>
+        <button type="button" onClick={ () => exportPng(stageRef.current, scale)}>Save PNG</button>
       </div>
 
       <div className="ink-paper">
@@ -118,6 +121,7 @@ export function InkBlock({ block, onChange, onRemove }) {
           onTouchStart={handleMouseDown}
           onTouchMove={handleMouseMove}
           onTouchEnd={handleMouseUp}
+          ref={stageRef}
         >
           <Layer listening={false}>
             <Rect width={ink_width} height={height} fill={paper_color} />

@@ -16,7 +16,12 @@ konva and handwriting is going to be added next week
 - a sidebar
 - new note is currently buggy after adding the slash menu but previous version used to work.
 **Week (2):**
-started implementing Konva
+started implementing Konva, a canvas block that has differnt colors
+made the notes fully working and saves between sessions locally
+made an export to md option
+made many improvements to the ui of the slash menu
+made an export to png for konva,
+
 
 ## How to run: 
  the website currently is running at this link:  https://notebook-flame-nine.vercel.app/
@@ -89,6 +94,29 @@ maybe should be 2 files instead of 4?
 
 
 there are not actually used now because there are mostly implemented into the other files, i left them there as an example of how the dark mode works , they will be removed from the final version next week.
+
+## Week 2 : 
+
+moved some of the things i thought i would be able to implement this week into tht edrafts such as a footer, the pop up message for errors.
+
+
+most of the new stuff is in : 
+- taskcontext: some of the old save folder
+- storage folder: localstorage logic behind it 
+some guides followed: 
+https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
+https://developer.mozilla.org/en-US/docs/Web/API/Blob/Blob
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a
+
+- inkblock folder: mostly follwoed through these konva guides: 
+https://konvajs.org/docs/react/Free_Drawing.html
+https://konvajs.org/docs/sandbox/Canvas_Editor.html
+https://konvajs.org/docs/overview.html
+https://konvajs.org/docs/drag_and_drop/Drag_and_Drop.html
+https://konvajs.org/docs/sandbox/Canvas_to_PDF.html
+
+
+
 
 
 this project was made using react and vite as basis and is not finished, but is a base for what's to come!
