@@ -184,3 +184,5 @@ so konva has been implemented in a rudementary way but that saves with localstor
 what now is being implemented is the exporting of the note to markdown.
 
 files were moved to draft,
+
+during the last hour i optimized the code a bit and then i also made sure everyhting was working, i also started working on a file upload wiht mutliple files to import notes (might even add a pdf viewer and annotator.)
