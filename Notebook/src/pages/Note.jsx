@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTasks, useTasksDispatch, useCreateNote, useSaveStatus } from '../save/TasksContext';
 import { BlockEditor } from '../components/Slash/BlockEditor';
+import { downloadMd } from '../save/exportmd';
 
 export function Note() {
   const { id } = useParams();
@@ -45,6 +46,7 @@ export function Note() {
       <button type='button' className='back-link' onClick={() => save({ favorite: !note.favorite })}>
         {note.favorite ? '★ Favorite' : '☆ Add to favorites'}
       </button>
+      <button type='button' className='download' onClick={downloadMd(note)}>Download .md</button>
       <button type='button' className='back-link' onClick={handleDelete}>Delete note</button>
       <p className='card-muted'>{saveOk ? "Saved on this device" : "not saved: browser blocking storage"}</p>
     </div>

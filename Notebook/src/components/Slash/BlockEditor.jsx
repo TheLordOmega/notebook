@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { newBlock } from '../../save/TasksContext';
+import { newBlock, newInkBlock } from '../../save/TasksContext';
 import { SlashMenu, buildMenu, getSlashTriggerText, removeSlashText } from './slashMenu';
 import './slash.css';
-
+import { InkBlock } from '../../Ink/InkBlock';
 
 
 export function BlockEditor({ blocks, onChange }) {
@@ -18,20 +18,32 @@ export function BlockEditor({ blocks, onChange }) {
   });
 
   const groups = menu ? buildMenu(menu.query) : [];
-  const items = groups.flatMap((g) => g.items);      // your flatItems
+  const items = groups.flatMap((g) => g.items);
   const update = (id, patch) =>
     onChange(blocks.map((b) => (b.id === id ? { ...b, ...patch } : b)));
 
   function handleChange(block, text) {
     update(block.id, { text });
-    const query = getSlashTriggerText(text);          // null when the line isn't a slash command
+    const query = getSlashTriggerText(text);
     setMenu(query === null ? null : { blockId: block.id, query, index: 0 });
   }
 
   function pick(block, command) {
+    if (command.type === "ink") {
+      const i = blocks.indexOf(block)
+      const line = {
+        ...block, text:
+          removeSlashText(block.text)
+      }
+      onChange([...blocks.slice(0, i), line,
+        newInkBlock(), newBlock("text"), ...blocks.slice(i+1)])
+      setMenu(null)
+      return;
+    }
     update(block.id, { type: command.type, text: removeSlashText(block.text), checked: false });
     setMenu(null);
     pendingFocus.current = block.id;
+
   }
 
   function handleKeyDown(e, block, i) {
@@ -67,6 +79,13 @@ export function BlockEditor({ blocks, onChange }) {
     <div className='editor'>
       {blocks.map((block, i) => (
         <div key={block.id} className={`block block-${block.type}`}>
+          {block.type === 'ink' && (
+            <InkBlock
+              block={block}
+              onChange={(patch) => update(block.id, patch)}
+              onRemove={() => onChange(blocks.filter((b) => b.id !== block.id))}
+            />
+          )}
           {block.type === 'todo' && (
             <input
               type='checkbox'
@@ -75,15 +94,16 @@ export function BlockEditor({ blocks, onChange }) {
               onChange={() => update(block.id, { checked: !block.checked })}
             />
           )}
-          <input
-            ref={(el) => { inputs.current[block.id] = el; }}
-            className={block.checked ? 'block-input is-done' : 'block-input'}
-            value={block.text}
-            placeholder={i === 0 ? 'Type / for commands' : ''}
-            onChange={(e) => handleChange(block, e.target.value)}
-            onKeyDown={(e) => handleKeyDown(e, block, i)}
-            onBlur={() => setMenu(null)}
-          />
+          {block.type !== 'ink' && (
+            <input
+              ref={(el) => { inputs.current[block.id] = el; }}
+              className={block.checked ? 'block-input is-done' : 'block-input'}
+              value={block.text}
+              placeholder={i === 0 ? 'Type / for commands' : ''}
+              onChange={(e) => handleChange(block, e.target.value)}
+              onKeyDown={(e) => handleKeyDown(e, block, i)}
+              onBlur={() => setMenu(null)}  />
+          )}
           {menu?.blockId === block.id && items.length > 0 && (
             <SlashMenu groups={groups} activeIndex={menu.index} onPick={(c) => pick(block, c)} />
           )}

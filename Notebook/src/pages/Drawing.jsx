@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InkBlock } from "../components/Ink/Inkblock";
+import { InkBlock } from "../components/Ink/newInkBlocklock";
 import { newInkBlock } from "../save/TasksContext";
 
 

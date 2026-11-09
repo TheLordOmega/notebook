@@ -10,11 +10,25 @@ export const Slash_commands = [
         type: 'text'
       },
       {
-        id: 'heading',
-        title: 'Heading',
+        id: 'heading1',
+        title: 'Heading1',
         description: 'Big title',
-        icon: 'H',
-        type: 'heading'
+        icon: 'h1',
+        type: 'heading1'
+      },
+      {
+        id: "heading2",
+        title: "Heading 2",
+        description: "title",
+        icon: "h2",
+        type: "heading2"
+      },
+      {
+        id: "heading3",
+        title: "Heading 3",
+        description: "sub-heading",
+        icon: "h3",
+        type: "heading3"
       },
       {
         id: 'todo',
@@ -25,7 +39,19 @@ export const Slash_commands = [
       },
     ],
   },
-];
+  {
+    category: "Media",
+    items: [
+      {
+         id: "drawing" ,
+         title: "Drawing",
+         description: "canvas",
+         icon: "✎",
+         type: "ink"
+      }
+   ]
+  },
+]
 
 export function buildMenu(filter) {
   const term = (filter || '').toLowerCase();

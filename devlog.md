@@ -169,3 +169,7 @@ the goal for the next few hours is to finish implementing a pdfexport of the can
 
 i worked for an hour on more konva features.
 i decided to go back and finish the savefile feature before implementing anymore of konva and fixing the new notes, but also that the notes blocks look less obstructive.
+
+
+i have started working on implementing konva
+updated inkblock, made the slashmenu also change colors, and made its colors be consistent with the variables, added a toolbar
